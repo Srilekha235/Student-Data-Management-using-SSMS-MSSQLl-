@@ -7,12 +7,12 @@
 
 
                              /*=====================================================================*/
-                             /*    	          Final project ñ Student Data Management               */
+                             /*    	          Final project ‚Äì Student Data Management               */
                              /*=====================================================================*/
 
 
 /*=====================================================================*/
-/* 1.	Create a database called ìLMT_Universityî.                     */
+/* 1.	Create a database called ‚ÄúLMT_University‚Äù.                     */
 /*=====================================================================*/
 
 USE master;  --Use Master Database
@@ -32,7 +32,7 @@ GO
 
 
 /*=====================================================================*/
-/* 2.	Create an ìenrolî schema under ìLMT_Universityî.               */
+/* 2.	Create an ‚Äúenrol‚Äù schema under ‚ÄúLMT_University‚Äù.               */
 /*=====================================================================*/
 
 CREATE SCHEMA enrol;
@@ -42,12 +42,12 @@ IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'enrol')
     EXEC ('CREATE SCHEMA enrol;');
   END;
 
---  3.Using ìenrolî Schema for creating the following project.
+--  3.Using ‚Äúenrol‚Äù Schema for creating the following project.
 
 
 
 /*===============================================================================================*/
-/* 5.a.b.	Create an ìAddressî table under ìenrolî schema with the following specifications     */
+/* 5.a.b.	Create an ‚ÄúAddress‚Äù table under ‚Äúenrol‚Äù schema with the following specifications     */
 /*===============================================================================================*/
 
 CREATE TABLE [enrol].Address
@@ -67,7 +67,7 @@ CREATE TABLE [enrol].Address
 
 INSERT INTO [enrol].[Address] ([StreetAddress], [City], [PostalCode], [Country]) 
 Values
-('5 Schurz Lane','GrybÛw','33-330','Poland');
+('5 Schurz Lane','Gryb√≥w','33-330','Poland');
 
 INSERT INTO [enrol].[Address] ([StreetAddress], [City], [Country]) 
 Values
@@ -75,7 +75,7 @@ Values
 
 INSERT INTO [enrol].[Address] ([StreetAddress], [City], [PostalCode], [Country]) 
 Values
-('44135 Northfield Way','Nowy DwÛr Mazowiecki','05-160','Poland');
+('44135 Northfield Way','Nowy Dw√≥r Mazowiecki','05-160','Poland');
 
 INSERT INTO [enrol].[Address] ([StreetAddress], [City], [Country]) 
 Values
@@ -143,7 +143,7 @@ Values
 
 INSERT INTO [enrol].[Address] ([StreetAddress], [City], [State], [PostalCode], [Country]) 
 Values
-('19732 Burning Wood Parkway','PiteÂ','Norrbotten','944 73','Sweden');
+('19732 Burning Wood Parkway','Pite√•','Norrbotten','944 73','Sweden');
 
 INSERT INTO [enrol].[Address] ([StreetAddress], [City], [PostalCode], [Country]) 
 Values
@@ -167,15 +167,15 @@ Values
 
 INSERT INTO [enrol].[Address] ([StreetAddress], [City], [Country]) 
 Values
-('19 Walton Way','÷ldziyt','Mongolia');
+('19 Walton Way','√ñldziyt','Mongolia');
 
 INSERT INTO [enrol].[Address] ([StreetAddress], [City], [State], [PostalCode], [Country]) 
 Values
-('19732 Burning Wood Parkway','Cergy-Pontoise','Œle-de-France','95304','France');
+('19732 Burning Wood Parkway','Cergy-Pontoise','√éle-de-France','95304','France');
 
 INSERT INTO [enrol].[Address] ([StreetAddress], [City], [Country]) 
 Values
-('5094 Gateway Way','éivinice','Bosnia and Herzegovina');
+('5094 Gateway Way','≈Ωivinice','Bosnia and Herzegovina');
 
 INSERT INTO [enrol].[Address] ([StreetAddress], [City], [Country]) 
 Values
@@ -187,7 +187,7 @@ Values
 
 
 /*===============================================================================================*/
-/* 6.a.b.	Create a ìDepartmentî table under ìenrolî schema with the following specifications   */
+/* 6.a.b.	Create a ‚ÄúDepartment‚Äù table under ‚Äúenrol‚Äù schema with the following specifications   */
 /*===============================================================================================*/
 
 CREATE TABLE [enrol].Department
@@ -213,7 +213,7 @@ Values
 ('AEIE','Applied Electronics and Instrumentation Engineering',50);
 
 /*===============================================================================================*/
-/* 7.a.b.	Create a ìLecturerî table under ìenrolî schema with the following specifications     */
+/* 7.a.b.	Create a ‚ÄúLecturer‚Äù table under ‚Äúenrol‚Äù schema with the following specifications     */
 /*===============================================================================================*/
 
 CREATE TABLE [enrol].Lecturer
@@ -263,7 +263,7 @@ Values
 ('Richy Saice','MSC','2020-02-26',6);
 
 /*===============================================================================================*/
-/* 8.a.b.	Create a ìStudentî table under ìenrolî schema with the following specifications      */
+/* 8.a.b.	Create a ‚ÄúStudent‚Äù table under ‚Äúenrol‚Äù schema with the following specifications      */
 /*===============================================================================================*/
 
 CREATE TABLE [enrol].Student
@@ -365,7 +365,7 @@ SELECT * FROM [enrol].[Lecturer];
 SELECT * FROM [enrol].[Address];
 
 /*===================================================================================================================================*/
-/* 9.e.	List the StudentFullName, StudentDOB, StudentMobile from Student [StudentFullName=StudentFirstName + ë  ë + StudentLastName] */
+/* 9.e.	List the StudentFullName, StudentDOB, StudentMobile from Student [StudentFullName=StudentFirstName + ‚Äò  ‚Äò + StudentLastName] */
 /*===================================================================================================================================*/
 
 SELECT CONCAT(StudentFirstName, ' ', StudentLastName) AS [StudentFullName], StudentDOB, StudentMobile FROM [enrol].[Student];
@@ -397,7 +397,7 @@ SELECT COUNT(*) AS [Number of Students] FROM [enrol].[Student] WHERE DepartmentI
 
 /*===================================================================================================================================*/
 /* 9.j.	List all the StudentFullName, StudentAge, StudentMobile from Student                                                         */
-/*[StudentFullName= StudentFirstName + ë  ë + StudentLastName] [StudentAge= Current date ñ DOB (in Years)]                           */
+/*[StudentFullName= StudentFirstName + ‚Äò  ‚Äò + StudentLastName] [StudentAge= Current date ‚Äì DOB (in Years)]                           */
 /*===================================================================================================================================*/
 
 SELECT CONCAT(StudentFirstName, ' ', StudentLastName) AS [StudentFullName], 
@@ -406,7 +406,7 @@ StudentMobile FROM [enrol].[Student];
 
 /*===================================================================================================================================*/
 /* 9.k.	List all the StudentFullName, StudentAge, StudentMobile whose Age>23 from Student [StudentFullName=                          */
-/* StudentFirstName + ë  ë + StudentLastName] [StudentAge= Current date ñ DOB (in Years)]                                            */                                                 
+/* StudentFirstName + ‚Äò  ‚Äò + StudentLastName] [StudentAge= Current date ‚Äì DOB (in Years)]                                            */                                                 
 /*===================================================================================================================================*/
 
 SELECT CONCAT(StudentFirstName, ' ', StudentLastName) AS [StudentFullName], 
@@ -417,7 +417,7 @@ ORDER BY StudentAge;
 
 /*===================================================================================================================================*/
 /* 9.l.	List all the StudentFullName, StudentAge, StudentMobile whose Age is either 21 or 23 from Student                            */
-/* StudentFirstName + ë  ë + StudentLastName] [StudentAge= Current date ñ DOB (in Years)]                                            */                                                 
+/* StudentFirstName + ‚Äò  ‚Äò + StudentLastName] [StudentAge= Current date ‚Äì DOB (in Years)]                                            */                                                 
 /*===================================================================================================================================*/
 
 SELECT CONCAT(StudentFirstName, ' ', StudentLastName) AS [StudentFullName], 
@@ -432,7 +432,7 @@ SELECT LecturerID, LecturerName, LecturerHighestQualification, LecturerAge from 
 
 /*===================================================================================================================================*/
 /* 9.n.	List all the LecturerID, LecturerName, LecturerHighestQualification, LecturerAge from Lecturer                               */
-/* whose HighestQualification is either ìMSî or ìPhDî..                                                                              */                                                 
+/* whose HighestQualification is either ‚ÄúMS‚Äù or ‚ÄúPhD‚Äù..                                                                              */                                                 
 /*===================================================================================================================================*/
 
 SELECT LecturerID, LecturerName, LecturerHighestQualification, LecturerAge from [enrol].[Lecturer] 
@@ -445,13 +445,13 @@ WHERE LecturerHighestQualification = 'MS' OR LecturerHighestQualification = 'PhD
 SELECT * FROM [enrol].[Lecturer] WHERE DepartmentID = 2;
 
 /*===================================================================================================================================*/
-/* 9.p.	List all the lecturer information whose name end with ìRî.                                                                   */                                                 
+/* 9.p.	List all the lecturer information whose name end with ‚ÄúR‚Äù.                                                                   */                                                 
 /*===================================================================================================================================*/
 
 SELECT * FROM [enrol].[Lecturer] WHERE LecturerName LIKE '%R';
 
 /*===================================================================================================================================*/
-/* 9.q.	List all the lecturer information whose name either start or end with ìEî.                                                   */                                                 
+/* 9.q.	List all the lecturer information whose name either start or end with ‚ÄúE‚Äù.                                                   */                                                 
 /*===================================================================================================================================*/
 
 SELECT * FROM [enrol].[Lecturer] WHERE LecturerName LIKE 'E%' OR LecturerName LIKE '%E';
@@ -470,7 +470,7 @@ SELECT LecturerID, SUBSTRING(LecturerName, 1,5) AS LecturerName, LecturerHighest
 
 /*===================================================================================================================================*/
 /* 9.t.	List LecturerID, LecturerName, LecturerHighestQualification,                                                                 */
-/* LecturerAge(in year) [LecturerAge= Current Date ñ LecturerAge)] (in year).                                                        */                                                 
+/* LecturerAge(in year) [LecturerAge= Current Date ‚Äì LecturerAge)] (in year).                                                        */                                                 
 /*===================================================================================================================================*/
 
 SELECT LecturerID, LecturerName, LecturerHighestQualification, DATEDIFF(YEAR,[LecturerAge],getdate()) AS [LecturerAge] 
@@ -483,7 +483,7 @@ FROM [enrol].[Lecturer];
 SELECT DepartmentID, DepartmentName, DepartmentDescription, DepartmentCapacity FROM [enrol].[Department];
 
 /*===================================================================================================================================*/
-/* 9.v.	List all the Department information whoís DepartmentName is ìECEî.                                                           */                                                 
+/* 9.v.	List all the Department information who‚Äôs DepartmentName is ‚ÄúECE‚Äù.                                                           */                                                 
 /*===================================================================================================================================*/
 
 SELECT * FROM [enrol].[Department] WHERE DepartmentName = 'ECE';
@@ -501,7 +501,7 @@ SELECT DepartmentName, DepartmentDescription, DepartmentCapacity FROM [enrol].[D
 SELECT AddressID, StreetAddress, City, State, PostalCode, Country FROM [enrol].[Address];
 
 /*===================================================================================================================================*/
-/* 9.y.	List all AddressID, StreetAddress, City, State, PostalCode, Country from Address who belongs to ìPolandî country.            */                                                 
+/* 9.y.	List all AddressID, StreetAddress, City, State, PostalCode, Country from Address who belongs to ‚ÄúPoland‚Äù country.            */                                                 
 /*===================================================================================================================================*/
 
 SELECT AddressID, StreetAddress, City, State, PostalCode, Country FROM [enrol].[Address] WHERE Country = 'Poland';
@@ -562,7 +562,7 @@ SELECT DISTINCT City FROM [enrol].[Address];
 
 /*===================================================================================================================================*/
 /* 10.f.		List all the LecturerID, LecturerName, LecturerHighestQualification, LecturerYearService                             */
-/*              from Lecturer [LecturerYearService= Current Date ñ LecturerAge] (in year)                                            */                                                 
+/*              from Lecturer [LecturerYearService= Current Date ‚Äì LecturerAge] (in year)                                            */                                                 
 /*===================================================================================================================================*/
 
 SELECT LecturerID, LecturerName, LecturerHighestQualification, 
@@ -652,7 +652,7 @@ L.LecturerID, L.LecturerName, L.LecturerHighestQualification, DATEDIFF(YEAR,[Lec
 
 
 /*===================================================================================================================================*/
-/* 11.g.	Display all Student with Address, Department and Lecturer Information who belongs to either ìMEî or ìECEî department     */                                                 
+/* 11.g.	Display all Student with Address, Department and Lecturer Information who belongs to either ‚ÄúME‚Äù or ‚ÄúECE‚Äù department     */                                                 
 /*===================================================================================================================================*/	
 
 SELECT S.StudentID, S.StudentRollNo, CONCAT(S.StudentFirstName, ' ', S.StudentLastName) AS [StudentName], 
@@ -666,7 +666,7 @@ L.LecturerID, L.LecturerName, L.LecturerHighestQualification, DATEDIFF(YEAR,[Lec
 		WHERE D.DepartmentName = 'ME' OR D.DepartmentName = 'ECE';
 
 /*======================================================================================================================================*/
-/* 11.h. Display Student with Department and their Lecturer information based on the LecturerHighestQualification either ìMSî or ìPhDî  */                                                 
+/* 11.h. Display Student with Department and their Lecturer information based on the LecturerHighestQualification either ‚ÄúMS‚Äù or ‚ÄúPhD‚Äù  */                                                 
 /*======================================================================================================================================*/	
 
 SELECT S.StudentID, S.StudentRollNo, CONCAT(S.StudentFirstName, ' ', S.StudentLastName) AS [StudentName], 
@@ -678,7 +678,7 @@ L.LecturerID, L.LecturerName, L.LecturerHighestQualification, DATEDIFF(YEAR,[Lec
 		WHERE L.LecturerHighestQualification = 'MS' OR L.LecturerHighestQualification = 'PhD';
 
 /*======================================================================================================================================*/
-/* 11.i.   Display Student with Department and Address Information, where student belongs to ìThailandî country                         */                                                 
+/* 11.i.   Display Student with Department and Address Information, where student belongs to ‚ÄúThailand‚Äù country                         */                                                 
 /*======================================================================================================================================*/
 
 SELECT S.StudentID, S.StudentRollNo, CONCAT(S.StudentFirstName, ' ', S.StudentLastName) AS [StudentName], 
@@ -784,7 +784,7 @@ TRUNCATE TABLE [enrol].[LecturerCopy];
 SELECT * FROM [enrol].[LecturerCopy];
 
 /*======================================================================================================================================*/
-/* 13.b.    Delete all the student information for the students who belong to ìITî department.                                          */                                                 
+/* 13.b.    Delete all the student information for the students who belong to ‚ÄúIT‚Äù department.                                          */                                                 
 /*======================================================================================================================================*/
 
 DELETE FROM [enrol].[StudCopy] WHERE DepartmentID IN
@@ -796,7 +796,7 @@ SELECT * FROM [enrol].[StudCopy];
 
 
 /*======================================================================================================================================*/
-/* 13.c.    Delete all the student information for the students who belong to ìIndonesiaî country.                                      */                                                 
+/* 13.c.    Delete all the student information for the students who belong to ‚ÄúIndonesia‚Äù country.                                      */                                                 
 /*======================================================================================================================================*/
 
 DELETE FROM [enrol].[StudCopy] WHERE AddressID IN
@@ -808,7 +808,7 @@ SELECT * FROM [enrol].[StudCopy];
 
 
 /*======================================================================================================================================*/
-/* 13.d.    Delete all the student information for the student who belongs to ìNanshiî city.                                            */                                                 
+/* 13.d.    Delete all the student information for the student who belongs to ‚ÄúNanshi‚Äù city.                                            */                                                 
 /*======================================================================================================================================*/
 
 DELETE FROM [enrol].[StudCopy] WHERE AddressID IN
@@ -820,7 +820,7 @@ SELECT * FROM [enrol].[StudCopy];
 
 
 /*======================================================================================================================================*/
-/* 13.e.    Delete all the student information for the student who belongs to ìBretagneî state                                          */                                                 
+/* 13.e.    Delete all the student information for the student who belongs to ‚ÄúBretagne‚Äù state                                          */                                                 
 /*======================================================================================================================================*/
 
 DELETE FROM [enrol].[StudCopy] WHERE AddressID IN
@@ -836,7 +836,7 @@ SELECT * FROM [enrol].[StudCopy];
                                        /*================*/
 
 /*======================================================================================================================================*/
-/* 14.a.    Update StudentMobile for those students who belongs to Department ìMEî.                                                     */                                                 
+/* 14.a.    Update StudentMobile for those students who belongs to Department ‚ÄúME‚Äù.                                                     */                                                 
 /*======================================================================================================================================*/
 
 UPDATE [enrol].[Student] SET StudentMobile = 1110000111 WHERE DepartmentID IN
@@ -856,7 +856,7 @@ UPDATE [enrol].[Student] SET DepartmentID = 3 WHERE StudentID = 42;
 SELECT * FROM [enrol].[Student];
 
 /*======================================================================================================================================*/
-/* 14.c.    Update LecturerHighestQualification as ìPHdî for the Lecturer whose LecturerHighestQualification= ìPhDî.                    */                                                 
+/* 14.c.    Update LecturerHighestQualification as ‚ÄúPHd‚Äù for the Lecturer whose LecturerHighestQualification= ‚ÄúPhD‚Äù.                    */                                                 
 /*======================================================================================================================================*/
 
 
@@ -865,7 +865,7 @@ UPDATE [enrol].[Lecturer] SET LecturerHighestQualification = 'PHd' WHERE Lecture
 SELECT * FROM [enrol].[Lecturer];
 
 /*======================================================================================================================================*/
-/* 14.d.    Update PostalCode as ì00000î for the Address which contain NULL as a PostalCode.                                            */                                                 
+/* 14.d.    Update PostalCode as ‚Äú00000‚Äù for the Address which contain NULL as a PostalCode.                                            */                                                 
 /*======================================================================================================================================*/
 
 UPDATE [enrol].[Address] SET PostalCode = '00000' WHERE PostalCode IS NULL;
@@ -874,7 +874,7 @@ SELECT * FROM [enrol].[Address];
 
 
 /*======================================================================================================================================*/
-/* 14.e.    Update StudentLastName as ìPaulî for the Student whose Name is ìJerryî.                                                     */                                                 
+/* 14.e.    Update StudentLastName as ‚ÄúPaul‚Äù for the Student whose Name is ‚ÄúJerry‚Äù.                                                     */                                                 
 /*======================================================================================================================================*/
 
 
@@ -885,10 +885,3 @@ SELECT * FROM [enrol].[Student];
 
 
 /*===================================================END OF QUERIES=======================================================================*/
-
---Professor's Code
-
-Select '' + ISNULL(StudentFirstName,'') + ' ' + ISNULL(StudentLastName,'')as StudentFullName, StudentMob,
-DATEDIFF(yy,StudentDOB,getdate()) AS AGE from [enrol].[Student]  where DATEDIFF(yy,StudentDOB,getdate()) in (21,23);
-
---This is the correct way of writing the query
